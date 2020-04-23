@@ -1,0 +1,114 @@
+﻿@model WazeCredit.Models.CreditApplication
+
+<form method="post">
+    <div class="container">
+        <div class="row p-4 m-4 backgroundWhite border">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-12 px-3" style="border-bottom:1px solid #325d88">
+                <h2 class="text-info p-2 pb-4">Submit Credit Application</h2>
+            </div>
+            <div class="col-8 pt-3">
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="Name"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="Name" />
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="Email"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="Email" />
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="Phone"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="Phone" />
+                        <span class="text-danger" asp-validation-for="Phone"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="SSN"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="SSN" />
+                        <span class="text-danger" asp-validation-for="SSN"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="DOB"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="DOB" />
+                        <span class="text-danger" asp-validation-for="DOB"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="Salary"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="Salary" />
+                        <span class="text-danger" asp-validation-for="Salary"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="Address"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="Address" />
+                        <span class="text-danger" asp-validation-for="Address"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="City"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="City" />
+                        <span class="text-danger" asp-validation-for="City"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="State"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="State" />
+                        <span class="text-danger" asp-validation-for="State"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="PostalCode"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="PostalCode" />
+                        <span class="text-danger" asp-validation-for="PostalCode"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-9 offset-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-info form-control">Submit Application</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

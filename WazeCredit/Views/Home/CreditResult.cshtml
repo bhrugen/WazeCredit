@@ -1,0 +1,19 @@
+﻿@model WazeCredit.Models.ViewModels.CreditResult
+
+@if (Model.Success)
+{
+    <h1>Congratulations! Your application has been approved!</h1>
+    <h3>Your application ID : @Model.CreditID</h3>
+}
+else
+{
+    <h1>Your application could not be approved at this point!</h1>
+
+    <h3>Following are the reasons for denial:</h3>
+    @foreach (var reason in Model.ErrorList)
+    {
+        <div> &nbsp;-&nbsp; @reason </div>
+    }
+
+}
+

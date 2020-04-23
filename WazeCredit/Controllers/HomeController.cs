@@ -21,6 +21,8 @@ namespace WazeCredit.Controllers
         //private readonly SendGridSettings _sendGridOptions;
         //private readonly TwilioSettings _twilioOptions;
         private readonly WazeForecastSettings _wazeOptions;
+        [BindProperty]
+        private CreditApplication CreditModel { get; set; }
 
         public HomeController(IMarketForecaster marketForecaster, IOptions<WazeForecastSettings> wazeOptions)
         {
@@ -70,6 +72,15 @@ namespace WazeCredit.Controllers
             messages.Add($"Twilio Token: " + twilioOptions.Value.AuthToken);
             return View(messages);
         }
+
+
+        public IActionResult CreditApplication()
+        {
+            CreditModel = new CreditApplication();
+            return View(CreditModel);
+        }
+
+
 
 
         public IActionResult Privacy()
