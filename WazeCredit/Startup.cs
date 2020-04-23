@@ -49,8 +49,16 @@ namespace WazeCredit
             services.AddAppSettingsConfig(Configuration);
 
 
-            services.AddScoped<IValidationChecker, AddressValidationChecker>();
-            services.AddScoped<IValidationChecker, CreditValidationChecker>();
+            //services.AddScoped<IValidationChecker, AddressValidationChecker>();
+            //services.AddScoped<IValidationChecker, CreditValidationChecker>();
+            //services.TryAddEnumerable(ServiceDescriptor.Scoped<IValidationChecker, AddressValidationChecker>());
+            //services.TryAddEnumerable(ServiceDescriptor.Scoped<IValidationChecker, CreditValidationChecker>());
+
+            services.TryAddEnumerable(new[] {
+            ServiceDescriptor.Scoped<IValidationChecker, AddressValidationChecker>(),
+            ServiceDescriptor.Scoped<IValidationChecker, CreditValidationChecker>()
+            });
+
             services.AddScoped<ICreditValidator, CreditValidator>();
 
             services.AddTransient<TransientService>();
