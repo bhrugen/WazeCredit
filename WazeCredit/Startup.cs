@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using WazeCredit.Service;
 using WazeCredit.Utility.AppSettingsClasses;
 using WazeCredit.Utility.DI_Config;
+using WazeCredit.Middleware;
 
 namespace WazeCredit
 {
@@ -64,7 +65,7 @@ namespace WazeCredit
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.UseMiddleware<CustomMiddleware>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
