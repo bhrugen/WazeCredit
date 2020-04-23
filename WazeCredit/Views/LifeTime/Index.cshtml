@@ -1,0 +1,30 @@
+﻿@model List<String>
+<h1>LifeTime Of Services</h1>
+@{
+    var count = 0;
+}
+@foreach (string mess in Model)
+{
+    if (count == 0)
+    {
+        <div style="font-size:20px;padding-top:20px;">
+            Transient Lifetime will be different for every request!
+        </div>
+    }
+    if (count == 2)
+    {
+        <div style="font-size:20px;padding-top:20px;">
+            Scoped Lifetime will be different when you refresh!
+        </div>
+    }
+    if (count == 4)
+    {
+        <div style="font-size:20px;padding-top:20px;">
+            Singleton Lifetime will be same for your application! It changes when the application restarts!
+        </div>
+    }
+    count++;
+    <div>
+        @mess
+    </div>
+}
