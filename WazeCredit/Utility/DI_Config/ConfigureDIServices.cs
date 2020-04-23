@@ -28,7 +28,7 @@ namespace WazeCredit.Utility.DI_Config
             services.AddTransient<TransientService>();
             services.AddScoped<ScopedService>();
             services.AddSingleton<SingletonService>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddSingleton<IUnitOfWork, UnitOfWork>();
             services.AddScoped<CreditApprovedHigh>();
             services.AddScoped<CreditApprovedLow>();
 
