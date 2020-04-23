@@ -23,7 +23,7 @@ namespace WazeCredit.Controllers
         //private readonly TwilioSettings _twilioOptions;
         private readonly WazeForecastSettings _wazeOptions;
         [BindProperty]
-        private CreditApplication CreditModel { get; set; }
+        public CreditApplication CreditModel { get; set; }
 
         public HomeController(IMarketForecaster marketForecaster, 
             IOptions<WazeForecastSettings> wazeOptions,
