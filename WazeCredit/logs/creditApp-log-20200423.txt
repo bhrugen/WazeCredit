@@ -3,3 +3,8 @@
 2020-04-23T16:46:16.9200973-05:00  [INF] Content root path: "C:\Users\bhrug\Desktop\Udemy Course Code\Lecture Code\Lecture - WazeCredit\WazeCredit\WazeCredit" (b5d60022)
 2020-04-23T16:46:17.2275714-05:00 8000006d-0007-fc00-b63f-84710c7967bb [INF] Home Conteoller Index Action Called (c9950c4e)
 2020-04-23T16:46:17.2361934-05:00 8000006d-0007-fc00-b63f-84710c7967bb [INF] Home Conteoller Index Action Ended (3be4ff9c)
+2020-04-23T17:23:38.6921519-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-04-23T17:23:38.7052748-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-04-23T17:23:38.7076395-05:00  [INF] Content root path: "C:\Users\bhrug\Desktop\Udemy Course Code\Lecture Code\Lecture - WazeCredit\WazeCredit\WazeCredit" (b5d60022)
+2020-04-23T17:23:39.7774423-05:00 800000cf-0005-f400-b63f-84710c7967bb [INF] Home Conteoller Index Action Called (c9950c4e)
+2020-04-23T17:23:39.7823972-05:00 800000cf-0005-f400-b63f-84710c7967bb [INF] Home Conteoller Index Action Ended (3be4ff9c)

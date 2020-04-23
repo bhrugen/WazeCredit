@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WazeCredit.Data.Repository;
+using WazeCredit.Data.Repository.IRepository;
 using WazeCredit.Models;
 using WazeCredit.Service;
 using WazeCredit.Service.LifeTimeExample;
@@ -26,7 +28,7 @@ namespace WazeCredit.Utility.DI_Config
             services.AddTransient<TransientService>();
             services.AddScoped<ScopedService>();
             services.AddSingleton<SingletonService>();
-
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<CreditApprovedHigh>();
             services.AddScoped<CreditApprovedLow>();
 
