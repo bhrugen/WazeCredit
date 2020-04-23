@@ -17,6 +17,7 @@ namespace WazeCredit.Controllers
     {
         public HomeVM homeVM { get; set; }
         private readonly IMarketForecaster _marketForecaster;
+        private readonly ICreditValidator _creditValidator;
         //private readonly StripeSettings _stripeOptions;
         //private readonly SendGridSettings _sendGridOptions;
         //private readonly TwilioSettings _twilioOptions;
@@ -24,11 +25,14 @@ namespace WazeCredit.Controllers
         [BindProperty]
         private CreditApplication CreditModel { get; set; }
 
-        public HomeController(IMarketForecaster marketForecaster, IOptions<WazeForecastSettings> wazeOptions)
+        public HomeController(IMarketForecaster marketForecaster, 
+            IOptions<WazeForecastSettings> wazeOptions,
+            ICreditValidator creditValidator)
         {
             homeVM = new HomeVM();
             _wazeOptions = wazeOptions.Value;
             _marketForecaster = marketForecaster;
+            _creditValidator = creditValidator;
         }
         public IActionResult Index()
         {
@@ -80,8 +84,41 @@ namespace WazeCredit.Controllers
             return View(CreditModel);
         }
 
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        [ActionName("CreditApplication")]
+        public async Task<IActionResult> CreditApplicationPOST()
+        {
+            if (ModelState.IsValid)
+            {
+                var (validationPassed, errorMessages) = await _creditValidator.PassAllValidations(CreditModel);
+
+                CreditResult creditResult = new CreditResult()
+                {
+                    ErrorList = errorMessages,
+                    CreditID = 0,
+                    Success = validationPassed
+                };
+                if (validationPassed)
+                {
+                    //add record to database
+                    return RedirectToAction(nameof(CreditResult), creditResult);
+                }
+                else
+                {
+                    return RedirectToAction(nameof(CreditResult), creditResult);
+                }
+
+            }
+            return View(CreditModel);
+        }
 
 
+        public IActionResult CreditResult(CreditResult creditResult)
+        {
+            
+            return View(creditResult);
+        }
 
         public IActionResult Privacy()
         {
