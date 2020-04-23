@@ -16,6 +16,7 @@ using WazeCredit.Service;
 using WazeCredit.Utility.AppSettingsClasses;
 using WazeCredit.Utility.DI_Config;
 using WazeCredit.Middleware;
+using WazeCredit.Service.LifeTimeExample;
 
 namespace WazeCredit
 {
@@ -40,6 +41,11 @@ namespace WazeCredit
             services.AddTransient<IMarketForecaster, MarketForecasterV2>();
 
             services.AddAppSettingsConfig(Configuration);
+
+            services.AddTransient<TransientService>();
+            services.AddScoped<ScopedService>();
+            services.AddSingleton<SingletonService>();
+
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
         }
